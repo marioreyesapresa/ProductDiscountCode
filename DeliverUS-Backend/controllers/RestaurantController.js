@@ -28,7 +28,7 @@ exports.indexOwner = async function (req, res) {
   try {
     const restaurants = await Restaurant.findAll(
       {
-        // Added discountCode and discountPercentage attributes to response object
+        // Added discountPercentage attributes to response object
         attributes: ['id', 'name', 'description', 'address', 'postalCode', 'url', 'shippingCosts', 'averageServiceMinutes', 'email', 'phone', 'logo', 'heroImage', 'status', 'restaurantCategoryId', /* BEGIN SOLUTION */ 'discountPercentage' /* END SOLUTION */],
         where: { userId: req.user.id }
       })
